@@ -1,0 +1,97 @@
+<html>
+    <title>Contact Us</title>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    <script>
+        function checkboxes()
+        {
+            var firstName = document.getElementById("fName").value;
+            if(firstName == "")
+            {
+                document.getElementById("fName").focus();
+                document.getElementById("fName").style.backgroundColor = "red";
+                document.getElementById("fNameMessage").innerHTML = "* Required";
+                document.getElementById("fNameMessage").style.color = "red";
+                
+                return false;
+            }
+            var lastName = document.getElementById("lName").value;
+            if(lastName == "")
+            {
+                document.getElementById("lName").focus();
+                document.getElementById("lName").style.backgroundColor = "red";
+                document.getElementById("lNameMessage").innerHTML = "* Required";
+                document.getElementById("lNameMessage").style.color = "red";
+
+                return false;
+            }
+            var email = document.getElementById("email").value;
+            if(email == "")
+            {
+                document.getElementById("email").focus();
+                document.getElementById("email").style.backgroundColor = "red";
+                document.getElementById("emailMessage").innerHTML = "* Required";
+                document.getElementById("emailMessage").style.color = "red";
+
+                return false;
+            } 
+        }  
+    </script>
+    </head>
+
+    <body style="background-color: lavender;">
+        <div style="margin-left: 35px;">
+            <h1>Contact Us</h1>
+            <p></p>
+            
+                <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
+                <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span></p>
+                <p>Email: <input type="text" id="email">&nbsp;<span id="emailMessage"></span></p>
+                <button id="btnSubmit" class="btn btn-primary" onclick="checkboxes();">Submit My Info</button>
+        </div> 
+    </body>
+    <body style="background-color: lavender;">
+        <div style="margin-left: 35px;">
+            <br><b>Do you accept our terms of service?</b><br>
+            <input type="radio" id="yes" value="Yes">Yes<br>
+            <input type="radio" id="no" value="No">No<br>
+    
+            <button type="button" onclick="checkRadioButton()">Submit</button>
+    
+            <h3 id="disp" style="color:green"></h3>
+            <h4 id="error" style="color: red;"></h4>
+        </div>
+    </body>
+
+    <script>
+        function checkRadioButton()
+        {
+            if(document.getElementById('yes').checked)
+            {
+                document.getElementById("disp").innerHTML = document.getElementById("yes").value + " is the droid you're looking for!";
+            }
+            else if(document.getElementById('no').checked)
+            {
+                document.getElementById("error").innerHTML = document.getElementById("no").value + " is not the droid you're looking for!";
+            }
+            else
+            {
+                document.getElementById("error").innerHTML = "This ain't the droid you're looking for!"
+            }
+        }
+    </script>
+    <body style="background-color: lavender;">
+        <div style="margin-left: 35px;">
+            <p><a href="Homepage.html" style="font-size: 21px; color: darkred;">Homepage</a>
+                &nbsp; | &nbsp;<a href="Short Story.html" style="font-size: 21px; color: darkred;">Short Story</a>
+                &nbsp; | &nbsp;<a href="Portfolio.html" style="font-size: 21px; color: darkred;">Portfolio</a></p>
+        </div>
+    </body>
+</html>
